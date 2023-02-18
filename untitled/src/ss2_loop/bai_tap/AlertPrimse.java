@@ -1,13 +1,17 @@
-package ss2_loop;
+package ss2_loop.bai_tap;
 
-public class AlertPrime20 {
+import java.util.Scanner;
+
+public class AlertPrimse {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         int number = 0;
         int count = 0;
-        while (count < 20) {
-            if (number < 2) {
+        while (count < 100) {
+            if (number == 2 || number == 3) {
+                System.out.println(number);
             } else {
-                boolean flag = true;
+                boolean flag = false;
                 for (int i = 2; i <= Math.sqrt(number); i++) {
                     if (number % i == 0) {
                         flag = false;
@@ -15,10 +19,13 @@ public class AlertPrime20 {
                     } else {
                         flag = true;
                     }
+
                 }
                 if (flag) {
+                    if (number < 100) {
+                        System.out.println(number);
+                    }
                     count++;
-                    System.out.println(number);
                 }
             }
             number++;

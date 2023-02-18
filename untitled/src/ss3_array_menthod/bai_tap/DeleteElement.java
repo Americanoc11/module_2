@@ -1,10 +1,9 @@
-package ss3_array_menthod;
+package ss3_array_menthod.bai_tap;
 
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class reverce_array {
+public class DeleteElement {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a length");
@@ -15,15 +14,22 @@ public class reverce_array {
             array[i] = input.nextInt();
         }
         System.out.println(Arrays.toString(array));
+        System.out.println("Enter a number");
+        int number = input.nextInt();
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                if (array[i] < array[j]) {
-                    int b = array[i];
-                    array[i] = array[j];
-                    array[j] = b;
+            if (number == array[i]) {
+                array[i] = 0;
+            }
+            if (array[i] == 0) {
+                for (int j = i; j < array.length - 1; j++) {
+                    array[j] = array[j + 1];
                 }
+                array[array.length - 1] = 0;
             }
         }
-        System.out.println("Reverse Array: " + Arrays.toString(array));
+        int[] array2 = Arrays.copyOf(array, array.length - 1);
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(array2));
+
     }
 }

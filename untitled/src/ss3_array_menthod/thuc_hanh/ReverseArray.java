@@ -1,9 +1,9 @@
-package ss3_array_menthod;
+package ss3_array_menthod.thuc_hanh;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class delete_array {
+public class ReverseArray {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a length");
@@ -14,9 +14,15 @@ public class delete_array {
             array[i] = input.nextInt();
         }
         System.out.println(Arrays.toString(array));
-        System.out.println("Enter a number");
-        int number = input.nextInt();
         for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] < array[j]) {
+                    int b = array[i];
+                    array[i] = array[j];
+                    array[j] = b;
+                }
+            }
         }
+        System.out.println("Reverse Array: " + Arrays.toString(array));
     }
 }
