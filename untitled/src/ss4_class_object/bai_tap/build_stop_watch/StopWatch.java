@@ -24,33 +24,22 @@ public class StopWatch {
 
 
     long stop() {
-        System.out.println("Enter a year");
-        int year = input.nextInt();
-        System.out.println("Enter a month");
-        int month = input.nextInt();
-        System.out.println("Enter date");
-        int date1 = input.nextInt();
-        System.out.println("Enter hours");
-        int hrs = input.nextInt();
-        System.out.println("Enter min");
-        int min = input.nextInt();
-        System.out.println("Enter sec");
-        int sec = input.nextInt();
-        Date date2 = new Date(year, month, date1, hrs, min, sec);
-        System.out.println(date2);
-        endTime = date2.toInstant().toEpochMilli();
+        Date date = new Date();
+        endTime  = date.toInstant().toEpochMilli();
         return endTime;
     }
 
     public long getElasedTime() {
-        return this.start() + endTime;
+        return this.endTime - startTime;
     }
 
     public static void main(String[] args) {
+
         StopWatch rolex = new StopWatch();
         System.out.println(rolex.date);
+        rolex.start();
+
         rolex.stop();
-        System.out.println(rolex.endTime);
         System.out.println(rolex.getElasedTime());
     }
 }

@@ -4,6 +4,23 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class SumRowArray {
+    static int sumRow(int[][] array,int row) {
+        int sum = 0;
+        do {
+            if (row < 0) {
+                System.out.println(" Retype");
+            }
+        } while (row < 0);
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (row == j) {
+                    sum += array[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
     public static void main(String[] args) {
         int[][] array = {
                 {1, 2, 3, 4, 5},

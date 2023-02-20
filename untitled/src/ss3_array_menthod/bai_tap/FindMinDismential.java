@@ -4,6 +4,18 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class FindMinDismential {
+    static int findMin(int[][] array) {
+        int min = array[0][0];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (min > array[i][j]) {
+                    min = array[i][j];
+                }
+            }
+        }
+        return min;
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[][] array = new int[3][3];
@@ -13,15 +25,7 @@ public class FindMinDismential {
                 array[i][j] = input.nextInt();
             }
         }
-        int min = array[0][0];
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                if (min > array[i][j]) {
-                    min = array[i][j];
-                }
-            }
-        }
         System.out.println(Arrays.deepToString(array));
-        System.out.println("Min: " + min);
+        System.out.println("Min: " + findMin(array));
     }
 }
