@@ -1,14 +1,11 @@
 package ss4_class_object.bai_tap.build_stop_watch;
 
-import java.time.ZonedDateTime;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
 public class StopWatch {
     Scanner input = new Scanner(System.in);
 
-    public Date date = new Date();
     private long startTime;
     private long endTime;
 
@@ -16,17 +13,13 @@ public class StopWatch {
     }
 
 
-    long start() {
-        Date date = new Date();
-        startTime = date.toInstant().toEpochMilli();
-        return startTime;
+    void start() {
+        startTime = new Date().toInstant().toEpochMilli();
     }
 
 
-    long stop() {
-        Date date = new Date();
-        endTime  = date.toInstant().toEpochMilli();
-        return endTime;
+    void stop() {
+        endTime  = new Date().toInstant().toEpochMilli();
     }
 
     public long getElasedTime() {
@@ -36,11 +29,16 @@ public class StopWatch {
     public static void main(String[] args) {
 
         StopWatch rolex = new StopWatch();
-        System.out.println(rolex.date);
         rolex.start();
-
+        int a = 6;
+        System.out.println(rolex.startTime);
+        for (int i =0; i<100000000l; i++) {
+            a =5;
+        }
         rolex.stop();
+        System.out.println(rolex.endTime);
         System.out.println(rolex.getElasedTime());
+
     }
 }
 
