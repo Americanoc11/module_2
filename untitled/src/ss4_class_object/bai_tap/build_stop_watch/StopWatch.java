@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class StopWatch {
     Scanner input = new Scanner(System.in);
+    Date date= new Date();
 
     private long startTime;
     private long endTime;
@@ -26,20 +27,6 @@ public class StopWatch {
         return this.endTime - startTime;
     }
 
-    public static void main(String[] args) {
-
-        StopWatch rolex = new StopWatch();
-        rolex.start();
-        int a = 6;
-        System.out.println(rolex.startTime);
-        for (int i =0; i<100000000l; i++) {
-            a =5;
-        }
-        rolex.stop();
-        System.out.println(rolex.endTime);
-        System.out.println(rolex.getElasedTime());
-
-    }
 }
 
 
