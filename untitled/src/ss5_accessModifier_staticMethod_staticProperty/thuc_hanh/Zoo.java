@@ -5,10 +5,11 @@ public class Zoo {
         return " Wow baby";
     }
 
-    class Moo {
+    class Moo extends Zoo {
         public void useAZoo() {
+            System.out.println("A zoo says: " + this.coolMethod());
             Zoo z = new Zoo();
-            System.out.println("A zoo says: " + z.coolMethod());
+            System.out.println("Zoo says, "+ z.coolMethod());
         }
     }
 

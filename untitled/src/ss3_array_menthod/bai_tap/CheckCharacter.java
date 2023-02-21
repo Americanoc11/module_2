@@ -3,21 +3,22 @@ package ss3_array_menthod.bai_tap;
 import java.util.Scanner;
 
 public class CheckCharacter {
-    public static void main(String[] args) {
-        String[] students = {"Danh", "Duc", "Tuan", "Tri"};
-        Scanner input= new Scanner(System.in);
-        System.out.println("Enter a name's student: ");
-        String inputName = input.nextLine();
-        boolean isExit = false;
-        for (int i = 0; i < students.length; i++) {
-            if (students[i].equals(inputName)) {
-                System.out.println("Tên nằm trong danh sách: " + inputName + " vị trí " + (i + 1));
-                isExit = true;
-                break;
+    static int count(String str, char character) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (character == str.charAt(i)) {
+                count++;
             }
         }
-        if (isExit == false) {
-            System.out.println(" không tìm thấy " + inputName + " trong danh sách");
-        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter character and check");
+        char character = input.nextLine().charAt(0);
+        String str = "aabcc";
+        System.out.println(str);
+        System.out.println("Character " + character + " display : " + count(str, character));
     }
 }

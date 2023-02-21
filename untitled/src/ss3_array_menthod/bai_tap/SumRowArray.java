@@ -4,19 +4,10 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class SumRowArray {
-    static int sumRow(int[][] array,int row) {
+    static int sumRow(int[][] array, int row) {
         int sum = 0;
-        do {
-            if (row < 0) {
-                System.out.println(" Retype");
-            }
-        } while (row < 0);
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                if (row == j) {
-                    sum += array[i][j];
-                }
-            }
+            sum += array[i][row];
         }
         return sum;
     }
@@ -37,14 +28,7 @@ public class SumRowArray {
                 System.out.println(" Retype");
             }
         } while (row < 0);
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                if (row == j) {
-                    sum += array[i][j];
-                }
-            }
-        }
         System.out.println(Arrays.deepToString(array));
-        System.out.println("Sum: " + sum);
+        System.out.println("Sum: " + sumRow(array,row));
     }
 }

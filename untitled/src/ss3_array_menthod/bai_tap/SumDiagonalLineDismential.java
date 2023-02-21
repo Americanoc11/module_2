@@ -6,14 +6,7 @@ public class SumDiagonalLineDismential {
     static int sumDiagonalLine(int[][] array) {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                if (i == j) {
-                    sum += array[i][j];
-                }
-                if (i + j == array.length - 1) {
-                    sum += array[i][j];
-                }
-            }
+           sum+=array[i][i];
         }
         return sum;
     }
