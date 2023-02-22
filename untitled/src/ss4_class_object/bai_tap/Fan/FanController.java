@@ -8,12 +8,12 @@ public class FanController {
         fan1.setRadius(10);
         fan1.setColor("yellow");
         fan1.display();
+        System.out.println(fan1.toString());
         Fan fan2 = new Fan();
         fan2.getTurnOff();
         fan2.setSpeed(fan1.MEDIUM);
         fan2.setRadius(5);
         fan2.setColor("blue");
         fan2.display();
-        System.out.println(fan2.toString());
     }
 }

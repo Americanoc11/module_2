@@ -49,13 +49,22 @@ public class Fan {
         return this.color;
     }
 
+    @Override
+    public String toString() {
+        return "Fan{" +
+                "on=" + on +
+                ", speed=" + speed +
+                ", radius=" + radius +
+                ", color='" + color + '\'' +
+                '}';
+    }
 
     String display() {
-        if (on) {
-            System.out.println("Speed: " + this.speed + " Color: " + this.color + " radius: " + this.radius);
+        if (on == false) {
+            System.out.println("Fan is off");
         } else {
-            System.out.println("Speed: " + this.speed + " Color: " + this.color + " radius: " + this.radius + " Status: " + this.on);
+            toString();
         }
-        return toString();
+        return null;
     }
 }
