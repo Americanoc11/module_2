@@ -6,11 +6,11 @@ public class QuadraticEquationController {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter value a");
-        double a = input.nextDouble();
+        double a = Double.parseDouble(input.nextLine());
         System.out.println("Enter value b");
-        double b = input.nextDouble();
+        double b = Double.parseDouble(input.nextLine());
         System.out.println("Enter value c");
-        double c = input.nextDouble();
+        double c = Double.parseDouble(input.nextLine());
         QuadraticEquation ex1 = new QuadraticEquation(a, b, c);
         ex1.getDiscriminat();
         if (ex1.getDiscriminat() > 0) {
