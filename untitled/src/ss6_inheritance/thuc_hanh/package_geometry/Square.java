@@ -7,6 +7,4 @@ public class Square extends Rectangle {
         this.setWidth(size);
         this.setLength(size);
     }
-
-
 }

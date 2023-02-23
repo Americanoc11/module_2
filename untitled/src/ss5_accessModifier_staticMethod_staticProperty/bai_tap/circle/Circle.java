@@ -2,7 +2,7 @@ package ss5_accessModifier_staticMethod_staticProperty.bai_tap.circle;
 
 public class Circle {
     private double radius = 1.0;
-    String color = "red";
+    private String color = "red";
 
     public Circle() {
     }
