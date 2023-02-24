@@ -28,13 +28,16 @@ public class Point3D extends Point2D {
     }
 
     public void setXYZ(float x, float y, float z) {
+        this.setX(x);
+        this.setY(y);
+        this.z = z;
     }
 
     @Override
     public String toString() {
         return
-                super.toString() + "\n" + "Point3D{" +"x="+super.getX()+", y="+super.getY()+
-                        ",z=" + z +", Array="+ Arrays.toString(getXYZ())+
+                super.toString() + "\n" + "Point3D{" + "x=" + super.getX() + ", y=" + super.getY() +
+                        ",z=" + z + ", Array=" + Arrays.toString(getXYZ()) +
                         '}';
     }
 }

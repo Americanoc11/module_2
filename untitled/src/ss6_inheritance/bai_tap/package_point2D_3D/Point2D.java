@@ -36,6 +36,8 @@ public class Point2D {
     }
 
     public void setXY(float x, float y) {
+        this.x=x;
+        this.y=y;
     }
 
     @Override
