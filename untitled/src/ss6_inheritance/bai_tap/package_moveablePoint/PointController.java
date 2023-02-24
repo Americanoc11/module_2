@@ -9,7 +9,11 @@ public class PointController {
         Point pointTwo = new Point(1.0f, 2.0f);
         pointTwo.setXY(1.0f, 2.0f);
         System.out.println(pointTwo.toString());
-        MovablePoint onePoint= new MovablePoint();
+        MovablePoint onePoint = new MovablePoint();
         System.out.println(onePoint.toString());
+        MovablePoint onePoint2 = new MovablePoint(7.3f, 0.5f, 0.0f, 5.0f);
+        System.out.println(onePoint2.toString());
+        onePoint2.move();
+        System.out.println(onePoint2.move());
     }
 }

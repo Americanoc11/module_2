@@ -33,18 +33,18 @@ public class Point {
     }
 
     public float[] getXY() {
-        return new float[]{x,y};
+        return new float[]{x, y};
     }
 
     public void setXY(float x, float y) {
-        this.x=x;
-        this.y=y;
+        this.x = x;
+        this.y = y;
     }
 
     @Override
     public String toString() {
         return "Point{" +
                 " x= " + x +
-                ", y= " + y + ", Point2D " + Arrays.toString(getXY());
+                ", y= " + y;
     }
 }
