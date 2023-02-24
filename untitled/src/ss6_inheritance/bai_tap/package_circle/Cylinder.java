@@ -1,7 +1,7 @@
 package ss6_inheritance.bai_tap.package_circle;
 
 public class Cylinder extends Circle {
-    public double height;
+    private double height;
 
     public Cylinder() {
         super();
