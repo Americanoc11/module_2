@@ -2,13 +2,12 @@ package ss7_abstract_class_interface.thuc_hanh.Animal_interfaceEdible;
 
 public class AnimalController {
     public static void main(String[] args) {
-        Tiger tiger= new Tiger();
-        tiger.howToEat();
-        Chicken chicken= new Chicken();
-        chicken.howToEat();
-        Orange orange= new Orange();
-        orange.howToEat();
-        Apple apple= new Apple();
-        apple.howToEat();
+        Animal[] animals= new Animal[2];
+        animals[0]= new Tiger();
+        animals[1]= new Chicken();
+        for (Animal animal:animals) {
+            System.out.println(animal.makeSound());
+            System.out.println(animal.howToEat());
+        }
     }
 }

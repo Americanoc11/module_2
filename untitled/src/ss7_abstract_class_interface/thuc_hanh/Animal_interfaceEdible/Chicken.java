@@ -1,18 +1,13 @@
 package ss7_abstract_class_interface.thuc_hanh.Animal_interfaceEdible;
 
-public class Chicken extends Animal implements IHowToEat {
-    public Chicken() {
-
-    }
-
+public class Chicken extends Animal{
     @Override
     public String makeSound() {
-        return "Chuck-chuck";
+        return "chruck...chruck";
     }
 
     @Override
-    public void howToEat() {
-        IHowToEat.super.howToEat();
-        System.out.println("Pluck Chicken and grill chicken");
+    public String howToEat() {
+        return "Grill and eat";
     }
 }
