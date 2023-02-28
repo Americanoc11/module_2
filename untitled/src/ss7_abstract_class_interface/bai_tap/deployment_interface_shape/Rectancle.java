@@ -28,6 +28,9 @@ public class Rectancle implements IResizeable {
     public void setHeight(double height) {
         this.height = height;
     }
+    double getArea() {
+        return width*height;
+    }
 
     @Override
     public String toString() {
