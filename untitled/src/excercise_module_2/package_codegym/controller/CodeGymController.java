@@ -24,8 +24,8 @@ public class CodeGymController {
                 case 2:
                     System.out.println("Nhập Id muốn xóa");
                     int id = Integer.parseInt(input.nextLine());
-                    studentService.deletedStudent(id)
-                    ;
+                    studentService.deletedStudent(id);
+
                     break;
                 case 3:
                     studentService.displayStudent();

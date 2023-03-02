@@ -6,4 +6,6 @@ public interface IStudentService {
     void displayStudent();
 
     void deletedStudent(int id);
+
+    void remove();
 }

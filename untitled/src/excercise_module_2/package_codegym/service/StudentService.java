@@ -14,6 +14,11 @@ public class StudentService implements IStudentService {
     }
 
     @Override
+    public void remove() {
+    }
+
+
+    @Override
     public void addNewStudent() {
         studentRepository.addNewStudent();
     }
