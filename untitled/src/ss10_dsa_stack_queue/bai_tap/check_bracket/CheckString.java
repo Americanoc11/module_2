@@ -6,34 +6,38 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class CheckString {
-    public static void main(String[] args) {
+    public static String checkBacket(String str) {
+
         Scanner input = new Scanner(System.in);
         List<String> stringList = new ArrayList<>();
+        boolean flag = true;
+        Stack<String> stack = new Stack<>();
+        for (int i = 0; i < str.length(); i++) {
+            stringList.add(String.valueOf(str.charAt(i)));
+        }
+        for (int i = 0; i < stringList.size(); i++) {
+            if (stringList.get(i).equals("(")) {
+                stack.push(stringList.get(i));
+            }
+            if (stringList.get(i).equals(")")) {
+                if (stack.empty()) {
+                    flag = false;
+                    return "???";
+                } else {
+                    stack.pop();
+                }
+            }
+        }
+        return "Well";
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         String str;
         do {
-            Stack<String> stack = new Stack<>();
-            System.out.println("Enter string");
+            System.out.println("Enter a string");
             str = input.nextLine();
-            for (int i = 0; i < str.length(); i++) {
-                stringList.add(String.valueOf(str.charAt(i)));
-            }
-            for (int i = 0; i < stringList.size(); i++) {
-                if (stringList.get(i).equals("(")) {
-                    stack.push(stringList.get(i));
-                }
-                if (stringList.get(i).equals(")")) {
-                    if (stack.empty()) {
-                        break;
-                    } else {
-                        stack.pop();
-                    }
-                }
-            }
-            if (stack.empty()) {
-                System.out.println("Well");
-            } else {
-                System.out.println("???");
-            }
+            System.out.println(checkBacket(str));
         } while (true);
     }
 }
