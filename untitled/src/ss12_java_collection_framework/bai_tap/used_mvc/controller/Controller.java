@@ -5,9 +5,10 @@ import ss12_java_collection_framework.bai_tap.used_mvc.service.ProductService;
 import java.util.Scanner;
 
 public class Controller {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        ProductService productService = new ProductService();
+    private Scanner input = new Scanner(System.in);
+    private ProductService productService = new ProductService();
+
+    public void menu() {
         int choice;
         do {
             System.out.println("-------------------------------------------------");

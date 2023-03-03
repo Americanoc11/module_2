@@ -1,5 +1,7 @@
 package ss12_java_collection_framework.bai_tap.used_mvc.repository;
 
+import ss12_java_collection_framework.bai_tap.used_mvc.model.Product;
+
 public interface IProductRepository {
     void displayProduct();
 
@@ -7,5 +9,5 @@ public interface IProductRepository {
 
     void findProduct(String name);
 
-    void addProduct();
+    void add(Product newProduct);
 }

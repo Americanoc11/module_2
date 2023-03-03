@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductRepository implements IProductRepository {
-    static List<Product> productList = new ArrayList<>();
+   private static List<Product> productList = new ArrayList<>();
 
     static {
         productList.add(new Product(001, "Sữa", "Vinamilk"));
@@ -60,15 +60,9 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public void addProduct() {
-        System.out.println("Nhập mã sản phẩn");
-        int id= Integer.parseInt(input.nextLine());
-        System.out.println("Nhập tên sản phẩm");
-        String name= input.nextLine();
-        System.out.println("Nhập nhà phân phối");
-        String tradeMark=input.nextLine();
-        Product newProduct= new Product(id,name,tradeMark);
+    public void add(Product newProduct) {
         productList.add(newProduct);
-        System.out.println("Thêm sản phẩm thành công");
+        System.out.println("Thêm thành công");
     }
+
 }
