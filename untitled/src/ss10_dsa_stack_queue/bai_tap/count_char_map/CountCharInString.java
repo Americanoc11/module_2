@@ -1,11 +1,10 @@
-package ss10_dsa_stack_queue.bai_tap;
+package ss10_dsa_stack_queue.bai_tap.count_char_map;
 
-import java.util.Arrays;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class test {
+public class CountCharInString {
     public static void main(String[] args) {
         Map<Integer, String> entry = new TreeMap<>();
         Scanner input = new Scanner(System.in);
