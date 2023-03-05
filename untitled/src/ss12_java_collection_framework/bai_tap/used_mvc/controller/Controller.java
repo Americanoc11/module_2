@@ -1,5 +1,6 @@
 package ss12_java_collection_framework.bai_tap.used_mvc.controller;
 
+import ss12_java_collection_framework.bai_tap.used_mvc.service.IProductService;
 import ss12_java_collection_framework.bai_tap.used_mvc.service.ProductService;
 
 import java.util.Scanner;

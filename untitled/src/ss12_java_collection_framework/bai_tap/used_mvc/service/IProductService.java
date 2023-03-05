@@ -8,4 +8,5 @@ public interface IProductService {
     void findProduct(String name);
 
     void addProduct();
+
 }
