@@ -6,16 +6,23 @@ import java.util.TreeMap;
 
 public class CountCharInString {
     public static void main(String[] args) {
-        Map<Integer, String> entry = new TreeMap<>();
+        TreeMap<String, Integer> treeMap = new TreeMap<>();
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a string");
         String string = input.nextLine();
         String[] newStr = string.toUpperCase().split(" ");
-        for (int i = 0; i < newStr.length; i++) {
-            entry.put((i + 1), newStr[i]);
+        for (String element : newStr) {
+            if (treeMap.containsKey(element)) {
+                int count = treeMap.get(element);
+                treeMap.put(element, count + 1);
+            } else {
+                treeMap.put(element, 1);
+            }
         }
-        for (Map.Entry<Integer, String> entrys : entry.entrySet()) {
-            System.out.println("Key: " + entrys.getKey() + ", value: " + entrys.getValue());
+        for (Map.Entry<String, Integer> entry : treeMap.entrySet()) {
+            String word = entry.getKey();
+            int count1 = entry.getValue();
+            System.out.println(word + ": " + count1);
         }
     }
 }
