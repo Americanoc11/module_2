@@ -8,7 +8,8 @@ public class Student extends Person {
 
     }
 
-    public Student(int id, String name, String dateOfBirth, Boolean gender, String classes, int score) {
+    public Student(int id, String name, String dateOfBirth
+            , Boolean gender, String classes, int score) {
         super(id, name, dateOfBirth, gender);
         this.classes = classes;
         this.score = score;

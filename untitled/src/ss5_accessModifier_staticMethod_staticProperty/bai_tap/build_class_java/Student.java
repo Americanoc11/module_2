@@ -7,6 +7,7 @@ public class Student {
     public Student() {
     }
 
+
     String setName(String str) {
         return name = str;
     }

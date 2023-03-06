@@ -2,14 +2,10 @@ package ss9_dsa_list.bai_tap.excercise.repository.implements_student;
 
 import ss9_dsa_list.bai_tap.excercise.model.Student;
 
-import java.util.List;
-
 public interface IStudentRepository {
+    void displayStu();
 
-    List<Student> display();
+    void deleted(int id);
 
-    List<Student> addNewStudent( );
-
-
-    void deletedStudent(int id);
+    void add(Student student);
 }

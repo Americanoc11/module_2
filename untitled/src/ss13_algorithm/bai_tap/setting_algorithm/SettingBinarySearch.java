@@ -11,10 +11,12 @@ public class SettingBinarySearch {
             int mid = (left + right) / 2;
             if (value < array.get(mid)) {
                 right = mid - 1;
+                return binarySearch(array, left, right, value);
             } else if (value == array.get(mid)) {
                 return mid;
             } else {
                 left = mid + 1;
+                return binarySearch(array, left, right, value);
             }
         }
         return -1;

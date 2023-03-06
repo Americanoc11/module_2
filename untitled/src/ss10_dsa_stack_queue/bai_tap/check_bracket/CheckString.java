@@ -10,7 +10,6 @@ public class CheckString {
 
         Scanner input = new Scanner(System.in);
         List<String> stringList = new ArrayList<>();
-        boolean flag = true;
         Stack<String> stack = new Stack<>();
         for (int i = 0; i < str.length(); i++) {
             stringList.add(String.valueOf(str.charAt(i)));
@@ -21,14 +20,17 @@ public class CheckString {
             }
             if (stringList.get(i).equals(")")) {
                 if (stack.empty()) {
-                    flag = false;
                     return "???";
                 } else {
                     stack.pop();
                 }
             }
         }
-        return "Well";
+        if (!stack.empty()) {
+            return "???";
+        } else {
+            return "Well";
+        }
     }
 
     public static void main(String[] args) {
