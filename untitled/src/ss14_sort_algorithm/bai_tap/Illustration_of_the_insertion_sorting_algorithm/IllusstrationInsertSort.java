@@ -23,3 +23,14 @@ public class IllusstrationInsertSort {
         System.out.println(Arrays.toString(array));
     }
 }
+/*
+ * 1. Tạo 1 danh sách con luôn luôn đợc duy trùy dưới dạng đã sắp xếp
+ * 2. Đầu tiên lấy 1 phần tử
+ * 3. Sau đó duyệt phần tử qua danh sách.
+ * 4. phần tử được chèn vào vị trí thích hợp sao cho vẫn đảm bảo duy trì thứ tự truyền vào.
+ * Độ phứ tạp :
+ * - Tối ưu: O(n)
+ * - Tệ nhất O(n^2)
+
+ */
+
