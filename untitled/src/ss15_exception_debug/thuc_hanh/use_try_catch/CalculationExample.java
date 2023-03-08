@@ -1,7 +1,7 @@
 package ss15_exception_debug.thuc_hanh.use_try_catch;
 
 public class CalculationExample {
-    void calculate(int x, int y) {
+    boolean calculate(int x, int y) {
         try {
             int a = x + y;
             int b = x - y;
@@ -12,7 +12,10 @@ public class CalculationExample {
             System.out.println("Tích x * y = " + c);
             System.out.println("Thương x / y = " + d);
         } catch (Exception e) {
-            System.err.println("Xảy ra ngoại lệ: " + e.getMessage());
+            System.out.println(e.getMessage());
+            System.out.println("Xin mời nhập lại");
+            return true;
         }
+        return false;
     }
 }
