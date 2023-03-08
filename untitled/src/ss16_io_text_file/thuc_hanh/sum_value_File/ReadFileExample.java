@@ -8,31 +8,21 @@ import java.util.Scanner;
 
 public class ReadFileExample {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Element want input");
-        int element = Integer.parseInt(scanner.nextLine());
-        int[] array = new int[element];
-        for (int i = 0; i < array.length; i++) {
-            System.out.println("Enter a value " + (i + 1) + ": ");
-            array[i] = Integer.parseInt(scanner.nextLine());
-        }
+        Scanner input = new Scanner(System.in);
+        String s= "Hello World";
+        String c="C1222G1";
         FileWriter fileWriter = null;
-        BufferedWriter bufferedWriter = null;
+        BufferedWriter bufferedWriter= null;
         try {
-            fileWriter = new FileWriter("src/ss16_io_text_file/thuc_hanh/sum_value_File/number");
-            bufferedWriter = new BufferedWriter(fileWriter);
-            for (Integer i : array) {
-                bufferedWriter.write(i);
-                bufferedWriter.newLine();
-            }
+            fileWriter = new FileWriter("src/ss16_io_text_file/thuc_hanh/sum_value_File/textSumValue.txt");
+            bufferedWriter= new BufferedWriter(fileWriter);
+            bufferedWriter.write(s);
+            bufferedWriter.flush();
             bufferedWriter.close();
-            fileWriter.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-
+        } catch (Exception e) {
+            e.getMessage();
         }
-        }
-
     }
+
+}
 
