@@ -14,9 +14,9 @@ public class TestTriangle {
         int side3 = Integer.parseInt(scanner.nextLine());
 
         if (side1 <= 0 || side2 <= 0 || side3 <= 0 ||
-                side1 + side2 < side3 ||
-                side2 + side3 < side1 ||
-                side3 + side1 < side2) {
+                side1 + side2 <= side3 ||
+                side2 + side3 <= side1 ||
+                side3 + side1 <= side2) {
             throw new IllegalTriangleException("Side is not condition. Please replay");
         } else {
             System.out.println("Three side triangle: " + side1 + " " + side2 + " " + side3);
