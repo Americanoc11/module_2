@@ -1,19 +1,23 @@
-package ss17_io_binary_file_serialization.bai_tap_csv.model;
+package ss17_io_binary_file_serialization.bai_tap.model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private String id;
     private String name;
     private String price;
     private String goods;
-    private String describe;
-    public Product(){}
+    private String decrible;
 
-    public Product(String id, String name, String price, String goods, String describe) {
+    public Product() {
+    }
+
+    public Product(String id, String name, String price, String goods, String decrible) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.goods = goods;
-        this.describe = describe;
+        this.decrible = decrible;
     }
 
     public String getId() {
@@ -32,23 +36,22 @@ public class Product {
         return goods;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getDecrible() {
+        return decrible;
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", price='" + price + '\'' +
                 ", goods='" + goods + '\'' +
-                ", describe='" + describe + '\'' +
+                ", decrible='" + decrible + '\'' +
                 '}';
     }
 
-
     public String writeToCsv() {
-        return  "id=" + id + ", name='" + name + ", price='" + price + ", goods='" + goods + ", describe='" + describe ;
+        return id +","+ name +"," + price + "," + goods + ","+ decrible;
     }
 }

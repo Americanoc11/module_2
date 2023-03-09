@@ -1,25 +1,22 @@
-package ss17_io_binary_file_serialization.bai_tap_csv.common;
+package ss17_io_binary_file_serialization.bai_tap.common;
 
-import ss17_io_binary_file_serialization.bai_tap_csv.model.Product;
+import ss17_io_binary_file_serialization.bai_tap.model.Product;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class WriteFile {
-    public static List<Product> write(String file, Product product) {
-        List<Product> list= new ArrayList<>();
-        BufferedWriter bufferedWriter = null;
+    public static void writeFile(String file, Product product){
+        BufferedWriter bufferedWriter=null;
         try {
-            bufferedWriter = new BufferedWriter(new FileWriter(file));
-            bufferedWriter.write(product.writeToCsv());
-            bufferedWriter.newLine();
-            bufferedWriter.close();
+             bufferedWriter= new BufferedWriter(new FileWriter(file,true));
+        bufferedWriter.write(product.writeToCsv());
+        bufferedWriter.newLine();
+        bufferedWriter.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return list;
+
     }
 }

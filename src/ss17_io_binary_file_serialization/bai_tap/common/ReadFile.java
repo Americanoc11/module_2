@@ -1,8 +1,11 @@
-package ss17_io_binary_file_serialization.bai_tap_csv.common;
+package ss17_io_binary_file_serialization.bai_tap.common;
 
-import ss17_io_binary_file_serialization.bai_tap_csv.model.Product;
 
-import java.io.*;
+import ss17_io_binary_file_serialization.bai_tap.model.Product;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
