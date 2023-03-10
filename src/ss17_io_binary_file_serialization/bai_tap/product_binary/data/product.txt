@@ -1,0 +1,3 @@
+12,12,12,12,12
+1,Choccopie,45000,Bánh,bánh xôp socola
+02,Pepsi,10000,Đồ uống,nước có ga
