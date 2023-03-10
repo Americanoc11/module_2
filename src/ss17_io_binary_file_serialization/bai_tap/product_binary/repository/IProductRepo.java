@@ -6,4 +6,6 @@ public interface IProductRepo {
     void display();
 
     void add(Product newProduct);
+
+    void findIformation(String name);
 }

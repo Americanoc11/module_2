@@ -22,7 +22,7 @@ public class FileWrite {
     public static void writeDataToFile(String path, List<Product> products){
         ObjectOutputStream objectOutputStream= null;
             try {
-                objectOutputStream= new ObjectOutputStream(new FileOutputStream(path));
+                objectOutputStream= new ObjectOutputStream(new FileOutputStream(path,true));
                 objectOutputStream.writeObject(products);
                 objectOutputStream.close();
             } catch (FileNotFoundException e) {

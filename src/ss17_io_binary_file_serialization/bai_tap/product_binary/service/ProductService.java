@@ -9,38 +9,39 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProductService implements IProductService{
-    IProductRepo iProductRepo= new ProductRepo();
+public class ProductService implements IProductService {
+    IProductRepo iProductRepo = new ProductRepo();
+
     @Override
     public void display() {
         iProductRepo.display();
     }
 
+    Scanner input = new Scanner(System.in);
+
     @Override
     public void add() {
-        List<Product> list= new ArrayList<>();
-        Scanner input = new Scanner(System.in);
-        String id;
-        boolean isId;
-        do {
-            try{
-                System.out.println("Nhập id sản phẩm");
-                id =input.nextLine();
-                break;
-            }catch (NumberFormatException e){
-                System.out.println("Bạn phải nhập số ");
-                isId= true;
-            }
-        }while (true);
+        List<Product> list = new ArrayList<>();
+        System.out.println("Nhập id sản phẩm");
+        String id=input.nextLine();
         System.out.println(" Nhập tên sản phẩm ");
-        String name= input.nextLine();
+        String name = input.nextLine();
         System.out.println("Nhập giá tiền");
-        String price=input.nextLine();
+        String price = input.nextLine();
         System.out.println("Nhập hàng sản xuất");
-        String goods=input.nextLine();
+        String goods = input.nextLine();
         System.out.println(" Mô tả sản phẩm");
-        String describle=input.nextLine();
-        Product newProduct= new Product(id,name,price,goods,describle);
+        String describle = input.nextLine();
+        Product newProduct = new Product(id, name, price, goods, describle);
         iProductRepo.add(newProduct);
+    }
+
+    @Override
+    public void findInformation() {
+        System.out.println("Nhập tên sản phẩm muốn tìm kiếm");
+        String name=input.nextLine();
+        iProductRepo.findIformation(name);
+
+
     }
 }

@@ -26,6 +26,7 @@ public class ProductController {
                     iProductService.add();
                     break;
                 case 3:
+                    iProductService.findInformation();
                     break;
                 case 4:
                     System.exit(0);

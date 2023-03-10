@@ -4,4 +4,6 @@ public interface IProductService {
     void display();
 
     void add();
+
+    void findInformation();
 }
