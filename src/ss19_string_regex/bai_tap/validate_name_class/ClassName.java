@@ -7,7 +7,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ClassName {
-    public static final String REGEX_CLASS_NAME= "^[A-Z][0-9]{4,4}*(G|H|I|K)$";
+//    public static final String REGEX_CLASS_NAME= "^[A-Z][0-9]{4,4}*(G|H|I|K)$";
+    public static final String REGEX_CLASS_NAME="^[A-Z]{1}+[0-9]{4}+([G|H|I|L]+[0-9])$";
     public static boolean checkNameClass(String str){
         Pattern p= Pattern.compile(REGEX_CLASS_NAME);
         Matcher m= p.matcher(str);
