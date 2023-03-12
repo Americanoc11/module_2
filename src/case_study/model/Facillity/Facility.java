@@ -1,50 +1,52 @@
 package case_study.model.Facillity;
 
 public abstract class Facility {
-    private String vila;
-    private String house;
-    private String room;
+    private String serviceName;
+    private String usableArea;
+    private String rentalCost;
+    private String maxNumberPerson;
+    private String rentalType;
 
     public Facility() {
-
     }
 
-    public Facility(String vila, String house, String room) {
-        this.vila = vila;
-        this.house = house;
-        this.room = room;
+    public Facility(String serviceName, String usableArea, String rentalCost, String maxNumberPerson, String rentalType) {
+        this.serviceName = serviceName;
+        this.usableArea = usableArea;
+        this.rentalCost = rentalCost;
+        this.maxNumberPerson = maxNumberPerson;
+        this.rentalType = rentalType;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public String getUsableArea() {
+        return usableArea;
+    }
+
+    public String getMaxNumberPerson() {
+        return maxNumberPerson;
+    }
+
+    public String getRentalType() {
+        return rentalType;
     }
 
     @Override
     public String toString() {
-        return "Facility{" +
-                "vila='" + vila + '\'' +
-                ", house='" + house + '\'' +
-                ", room='" + room + '\'' +
-                '}';
+        return
+                "serviceName='" + serviceName + '\'' +
+                ", usableArea='" + usableArea + '\'' +
+                ", rentalCost='" + rentalCost + '\'' +
+                ", maxNumberPerson='" + maxNumberPerson + '\'' +
+                ", rentalType='" + rentalType ;
+
     }
 
-    public String getVila() {
-        return vila;
+    public String writeToCsv() {
+        return serviceName + "," + usableArea + "," + rentalCost +"," + maxNumberPerson + "," + rentalType;
     }
 
-    public void setVila(String vila) {
-        this.vila = vila;
-    }
-
-    public String getHouse() {
-        return house;
-    }
-
-    public void setHouse(String house) {
-        this.house = house;
-    }
-
-    public String getRoom() {
-        return room;
-    }
-
-    public void setRoom(String room) {
-        this.room = room;
-    }
 }

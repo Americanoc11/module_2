@@ -1,5 +1,6 @@
 package ss17_io_binary_file_serialization.bai_tap.product_binary.common;
 
+import case_study.model.Person.Employee;
 import ss17_io_binary_file_serialization.bai_tap.product_binary.model.Product;
 
 import java.io.*;
@@ -45,4 +46,5 @@ public class FileRead {
         }
         return productList;
     }
+
 }

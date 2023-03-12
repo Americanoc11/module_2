@@ -1,80 +1,105 @@
 package case_study.model.Person;
 
 public abstract class Person {
+    private int id;
     private String name;
+    private String dateofBirth;
     private Boolean gender;
-    private int age;
-    private String dateOfBirth;
+    private String identity;
     private String phone;
-    private String city;
-    public Person(){}
+    private String email;
 
-    public Person(String name, Boolean gender, int age, String dateOfBirth, String phone, String city) {
-        this.name = name;
-        this.gender = gender;
-        this.age = age;
-        this.dateOfBirth = dateOfBirth;
-        this.phone = phone;
-        this.city = city;
+    public Person() {
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", gender=" + gender +
-                ", age=" + age +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", phone='" + phone + '\'' +
-                ", city='" + city + '\'' +
-                '}';
+    public Person(int id, String name, String dateofBirth, Boolean gender, String identity, String phone, String email) {
+        this.id = id;
+        this.name = name;
+        this.dateofBirth = dateofBirth;
+        this.gender = gender;
+        this.identity = identity;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getDateofBirth() {
+        return dateofBirth;
     }
 
     public Boolean getGender() {
         return gender;
     }
 
-    public void setGender(Boolean gender) {
-        this.gender = gender;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public String getIdentity() {
+        return identity;
     }
 
     public String getPhone() {
         return phone;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDateofBirth(String dateofBirth) {
+        this.dateofBirth = dateofBirth;
+    }
+
+    public void setGender(Boolean gender) {
+        this.gender = gender;
+    }
+
+    public void setIdentity(String identity) {
+        this.identity = identity;
+    }
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public String getCity() {
-        return city;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    @Override
+    public String toString() {
+        return
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", DateofBirth='" + dateofBirth + '\'' +
+                ", gender=" + gender +
+                ", identity='" + identity + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email;
     }
+
+    public String writeToCsv() {
+        return id + "," + name + "," + dateofBirth + "," + gender + "," + identity + "," + phone + "," + email;
+    }
+    /*
+    id
+    name
+    date
+    gender
+    identity
+    phone
+    email
+     */
 }
