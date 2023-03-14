@@ -1,6 +1,4 @@
-
 1,Choccopie,45000,Bánh,bánh xôp socola
 02,Pepsi,10000,Đồ uống,nước có ga
-
 1,1,1,1,1
 2,2,22,2,2
