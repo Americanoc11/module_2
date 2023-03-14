@@ -19,7 +19,7 @@ public class ProductRepo implements IProductRepo {
 //        }
         List<Product> productList = FileRead.readDataFromFile(pathBinary);
         for (Product p : productList) {
-            System.out.println(p);
+            System.out.println(p.toString());
         }
     }
 
