@@ -1,2 +1,5 @@
-id='12', name='Danh', DateofBirth='01/03', gender=true, identity='12xxx', phone='0923xxx', email='danh@gmail.com,kim cương,Đà Nẵng
-id='13', name='Hung', DateofBirth='01/12', gender=true, identity='12xxx', phone='89xxx', email='hung@gmail.com,kim cương,Huế
+12,12,12,null,12,12,12,12,12
+13,13,13,null,13,13,13,13,13
+12,12,12,null,12,12,12,12,12
+12,12,12,null,12,12,112,12,12
+14,duc,01/01,true,20xxx,090xxx,duc@gmail.com,kim cương,Đà nẵng

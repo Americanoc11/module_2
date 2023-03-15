@@ -29,7 +29,7 @@ public class Customer extends Person{
     }
     @Override
     public String writeToCsv() {
-        return super.toString()+","+guestType+","+andressResort;
+        return super.writeToCsv()+","+guestType+","+andressResort;
     }
      /*
     id

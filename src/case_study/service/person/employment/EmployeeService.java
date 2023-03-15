@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class EmployeeService implements IEmployeeService {
     IEmployeeRepo iEmployeeRepo = new EmployeeRepo();
     Scanner input = new Scanner(System.in);
-    public static String pathEmployee="src/case_study/data/list_employee.txt";
+    public static String pathEmployee = "src/case_study/data/list_employee.txt";
 
     @Override
     public void display() {
@@ -24,73 +24,94 @@ public class EmployeeService implements IEmployeeService {
     public void addEmployee() {
         List<Employee> employeeList = FileRead.readEmployee(pathEmployee);
         System.out.println("Nhập id");
-        int id = Integer.parseInt(input.nextLine());
-        boolean isId= true;
-        for (int i = 0; i < employeeList.size(); i++) {
-            if (id == employeeList.get(i).getId()) {
-                isId= false;
-                break;
+        try {
+            int id = Integer.parseInt(input.nextLine());
+            boolean isId = true;
+            for (int i = 0; i < employeeList.size(); i++) {
+                if (id == employeeList.get(i).getId()) {
+                    isId = false;
+                    break;
+                }
             }
-        }
-        if (isId){
-            System.out.println("Nhập tên nhân viên");
-            String name = input.nextLine();
-            System.out.println("Nhập ngày sinh");
-            String dateOfBirth = input.nextLine();
-            System.out.println("Nhập giới tính");
-            String tempGender = input.nextLine();
-            Boolean gender;
-            if (tempGender.equals("Nam") || tempGender.equals("nam")) {
-                gender = true;
-            } else if (tempGender.equals("Nữ") || tempGender.equals("nữ")) {
-                gender = false;
+            if (isId) {
+                System.out.println("Nhập tên nhân viên");
+                String name = input.nextLine();
+                System.out.println("Nhập ngày sinh");
+                String dateOfBirth = input.nextLine();
+                System.out.println("Nhập giới tính");
+                String tempGender = input.nextLine();
+                Boolean gender;
+                if (tempGender.equals("Nam") || tempGender.equals("nam")) {
+                    gender = true;
+                } else if (tempGender.equals("Nữ") || tempGender.equals("nữ")) {
+                    gender = false;
+                } else {
+                    gender = null;
+                }
+                System.out.println("Nhập căn cước công dân");
+                String identity = input.nextLine();
+                System.out.println("Nhập số điện thoại ");
+                String phone = input.nextLine();
+                System.out.println("Nhập email");
+                String email = input.nextLine();
+                System.out.println("Nhập trình độ học vấn");
+                String qualification = input.nextLine();
+                System.out.println("Đang làm ở vị trí ");
+                String position = input.nextLine();
+                System.out.println("Nhập mức lương");
+                String salary = input.nextLine();
+                Employee employee = new Employee(id, name, dateOfBirth, gender
+                        , identity, phone, email
+                        , qualification, position, salary);
+                iEmployeeRepo.addEmployee(employee);
             } else {
-                gender = null;
+                System.out.println("Id đã tồn tại");
+                addEmployee();
             }
-            System.out.println("Nhập căn cước công dân");
-            String identity = input.nextLine();
-            System.out.println("Nhập số điện thoại ");
-            String phone = input.nextLine();
-            System.out.println("Nhập email");
-            String email = input.nextLine();
-            System.out.println("Nhập trình độ học vấn");
-            String qualification = input.nextLine();
-            System.out.println("Đang làm ở vị trí ");
-            String position = input.nextLine();
-            System.out.println("Nhập mức lương");
-            String salary = input.nextLine();
-            Employee employee = new Employee(id, name, dateOfBirth, gender
-                    , identity, phone, email
-                    , qualification, position, salary);
-            iEmployeeRepo.addEmployee(employee);
-        } else {
-            System.out.println("Id đã tồn tại");
+        } catch (NumberFormatException e) {
+            System.out.println("Xin nhập số");
+            addEmployee();
+        } catch (Exception e) {
+            System.out.println("Lỗi ở đây" + e.getMessage());
+            System.out.println("Mời nhập lại");
             addEmployee();
         }
     }
 
     @Override
     public void editEmployee() {
-        List<Employee> employeeList=FileRead.readEmployee(pathEmployee);
-        int id = Integer.parseInt(input.nextLine());
-        boolean isId= false;
-        int index=-1;
-        for (int i = 0; i < employeeList.size(); i++) {
-            if (id == employeeList.get(i).getId()) {
-                index=i;
-                isId= true;
-                break;
+        List<Employee> employeeList = FileRead.readEmployee(pathEmployee);
+        System.out.println("Nhập id nhân viên");
+        int id;
+        int index;
+        try{
+            id = Integer.parseInt(input.nextLine());
+            boolean isId = false;
+             index = -1;
+            for (int i = 0; i < employeeList.size(); i++) {
+                if (id == employeeList.get(i).getId()) {
+                    index = i;
+                    isId = true;
+                    break;
+                }
             }
-        }
-        if (isId){
-            System.out.println("Id tồn tại");
-            getInforEmployee(id);
-            iEmployeeRepo.editEmployee(index,getInforEmployee(id));
-        } else {
-            System.out.println("Id không tồn tại");
+            if (isId) {
+                System.out.println("Id tồn tại");
+                iEmployeeRepo.editEmployee(index, getInforEmployee(id));
+            } else {
+                System.out.println("Id không tồn tại, Xin nhập lại");
+                editEmployee();
+            }
+        }catch (NumberFormatException e){
+            System.out.println("Mời nhập số: "+ e.getMessage());
+            editEmployee();
+        }catch (Exception e){
+            System.out.println("Lỗi ở đây: "+e.getMessage());
+            System.out.println("Mời nhập lại");
         }
     }
-    private Employee getInforEmployee(int id){
+
+    private Employee getInforEmployee(int id) {
         System.out.println("Nhập tên nhân viên");
         String name = input.nextLine();
         System.out.println("Nhập ngày sinh");

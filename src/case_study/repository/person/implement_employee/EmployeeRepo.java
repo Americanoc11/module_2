@@ -12,8 +12,6 @@ public class EmployeeRepo implements IEmployeeRepo {
     public static String pathEmployee="src/case_study/data/list_employee.txt";
     @Override
     public void display() {
-
-        System.out.println("List employee");
         List<Employee> employeeList1= FileRead.readEmployee(pathEmployee);
         for (Employee e: employeeList1){
             System.out.println(e.toString());

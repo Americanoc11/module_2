@@ -18,13 +18,18 @@ public class FileWrite {
              bufferedWriter= new BufferedWriter(new FileWriter(path,true));
              bufferedWriter.write(house.writeToCsv());
              bufferedWriter.newLine();
-             bufferedWriter.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }catch (IOException e) {
             e.printStackTrace();
         }catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }
@@ -34,13 +39,18 @@ public class FileWrite {
              bufferedWriter= new BufferedWriter(new FileWriter(path,true));
              bufferedWriter.write(room.writeToCsv());
              bufferedWriter.newLine();
-             bufferedWriter.close();
         }catch (FileNotFoundException e) {
             e.printStackTrace();
         }catch (IOException e) {
             e.printStackTrace();
         }catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public static void writeVilla(String path, Vila vila){
@@ -49,13 +59,18 @@ public class FileWrite {
              bufferedWriter= new BufferedWriter(new FileWriter(path,true));
              bufferedWriter.write(vila.writeToCsv());
              bufferedWriter.newLine();
-             bufferedWriter.close();
         }catch (FileNotFoundException e) {
             e.printStackTrace();
         }catch (IOException e) {
             e.printStackTrace();
         }catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public static void writeEmployee(String path, Employee employee) {
@@ -64,13 +79,18 @@ public class FileWrite {
             bufferedWriter = new BufferedWriter(new FileWriter(path,true));
             bufferedWriter.write(employee.writeToCsv());
             bufferedWriter.newLine();
-            bufferedWriter.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -80,13 +100,18 @@ public class FileWrite {
             bufferedWriter = new BufferedWriter(new FileWriter(path,true));
             bufferedWriter.write(customer.writeToCsv());
             bufferedWriter.newLine();
-            bufferedWriter.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
