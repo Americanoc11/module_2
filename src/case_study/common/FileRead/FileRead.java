@@ -94,10 +94,9 @@ public class FileRead {
             String[] tempArr;
             while ((temp = bufferedReader.readLine()) != null) {
                 tempArr = temp.split(",");
-                int tempArr1 = Integer.valueOf(tempArr[0]);
-                Boolean gender = Boolean.valueOf(tempArr[3]);
-                employee = new Employee(tempArr1, tempArr[1], tempArr[2]
-                        , gender, tempArr[4], tempArr[5]
+
+                employee = new Employee(Integer.parseInt(tempArr[0]), tempArr[1], tempArr[2]
+                        , Boolean.parseBoolean(tempArr[3]), tempArr[4], tempArr[5]
                         , tempArr[6], tempArr[7], tempArr[8],
                         tempArr[9]);
                 employeeList.add(employee);
@@ -125,7 +124,7 @@ public class FileRead {
                  tempArr= temp.split(",");
                 int tempArr1 = Integer.valueOf(tempArr[0]);
                 Boolean gender = Boolean.valueOf(tempArr[3]);
-                 customer= new Customer(tempArr1,tempArr[1],tempArr[2],gender,tempArr[4],tempArr[5],tempArr[6],tempArr[7],tempArr[8]);
+                 customer= new Customer(Integer.parseInt(tempArr[0]),tempArr[1],tempArr[2],Boolean.parseBoolean(tempArr[3]),tempArr[4],tempArr[5],tempArr[6],tempArr[7],tempArr[8]);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

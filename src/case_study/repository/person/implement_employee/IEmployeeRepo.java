@@ -10,4 +10,5 @@ public interface IEmployeeRepo {
     void addEmployee(Employee employee);
 
 
+    void editEmployee(int index, Employee inforEmployee);
 }

@@ -85,6 +85,7 @@ public class FuramaController {
                     break;
                 case 3:
                     // chưa làm được
+                    iEmployeeService.editEmployee();
                     isChoiceOne = true;
                     break;
                 case 4:

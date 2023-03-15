@@ -25,7 +25,7 @@ public class ProductRepo implements IProductRepo {
 
     @Override
     public void add(Product newProduct) {
-        List<Product> products = new ArrayList<>();
+        List<Product> products = FileRead.readDataFromFile(pathBinary);
         products.add(newProduct);
         FileWrite.write(path, newProduct);
         FileWrite.writeDataToFile(pathBinary, products);

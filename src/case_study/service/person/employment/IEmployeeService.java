@@ -5,4 +5,5 @@ public interface IEmployeeService {
 
     void addEmployee();
 
+    void editEmployee();
 }
