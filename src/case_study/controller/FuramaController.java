@@ -1,18 +1,7 @@
 package case_study.controller;
 
-import case_study.repository.person.implement_customer.ICustomerRepo;
-import case_study.service.facillity.implement_house.HouseService;
-import case_study.service.facillity.implement_house.IHouseService;
-import case_study.service.facillity.implement_room.IRoomService;
-import case_study.service.facillity.implement_room.RoomService;
-import case_study.service.facillity.implement_vila.IVillaService;
-import case_study.service.facillity.implement_vila.VillaService;
-import case_study.service.person.customer.CustomerService;
-import case_study.service.person.customer.ICustomerService;
-import case_study.service.person.employment.EmployeeService;
-import case_study.service.person.employment.IEmployeeService;
+import case_study.service.*;
 
-import java.util.Formatter;
 import java.util.Scanner;
 
 public class FuramaController {
@@ -27,10 +16,11 @@ public class FuramaController {
         Scanner input = new Scanner(System.in);
         int choice;
         int choiceTwo;
-        boolean isChoiceOne;
+        boolean isChoiceOne= true;
         boolean isChoiceTwo;
-        try {
-            do {
+        do {
+            isChoiceOne=false;
+            try{
                 System.out.println("Ứng dụng quản lý khu nghỉ dưỡng Furama");
                 System.out.println("1. Employee Management");
                 System.out.println("2. Customer Management");
@@ -61,16 +51,16 @@ public class FuramaController {
                         System.exit(0);
                         break;
                 }
+            } catch (NumberFormatException e) {
+                System.out.println(e.getMessage() + "\n Xin hãy nhập số");
+                isChoiceOne= true;
+            } catch (Exception e) {
+                System.out.println("Lỗi ở đây: " + e.getMessage());
+                System.out.println("Mời nhập lại:");
+                isChoiceOne= true;
+            }
+            } while (isChoiceOne);
 
-            } while (choice > 0 && choice < 7);
-        } catch (NumberFormatException e) {
-            System.out.println(e.getMessage() + "\n Xin hãy nhập số");
-            menu();
-        } catch (Exception e) {
-            System.out.println("Lỗi ở đây: " + e.getMessage());
-            System.out.println("Mời nhập lại:");
-            menu();
-        }
     }
 
     public static void employeeManagement() {
@@ -102,7 +92,7 @@ public class FuramaController {
                         isChoiceOne = true;
                         break;
                     case 4:
-                        menu();
+                         menu();
                         break;
                 }
             } while (isChoiceOne);
@@ -111,7 +101,7 @@ public class FuramaController {
             System.out.println("Mời nhập lại");
             employeeManagement();
         } catch (Exception e) {
-            System.out.println("Lỗi ở đây " + e.getMessage());
+            e.printStackTrace();
             System.out.println("Mời nhập lại:");
             employeeManagement();
         }

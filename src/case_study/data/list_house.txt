@@ -1,3 +1,4 @@
-House,200m^2,4,40000000,1 tháng,2 tầng,phòng trung cấp
-House,300m^2,4,500000001,1 tháng,3 tầng,phòng trung cấp
-House,400m^2,4,500000001,1 tháng,3 tầng,phòng trung cấp
+SVHO-0001,200.0,10000000,4,tháng,Trung cấp,3
+SVHO-0000,2000.0,1230000,4,năm,cao cấp,4
+SVHO-0003,200.0,200000,4,tháng,trung cấp,3
+SVHO-0002,200.0,200000,4,năm,trung cấp,3

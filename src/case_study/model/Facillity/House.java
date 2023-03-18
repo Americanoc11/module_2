@@ -4,13 +4,13 @@ import case_study.model.Facillity.Facility;
 
 public class House extends Facility {
     private String roomStandards;
-    private String floors;
+    private int floors;
 
     public House() {
     }
 
-    public House(String serviceName, String usableArea, String rentalCost, String maxNumberPerson
-            , String rentalType, String roomStandards, String floors) {
+    public House(String serviceName, double usableArea, long rentalCost, int maxNumberPerson
+            , String rentalType, String roomStandards, int floors) {
         super(serviceName, usableArea, rentalCost, maxNumberPerson, rentalType);
         this.roomStandards = roomStandards;
         this.floors = floors;
@@ -20,7 +20,7 @@ public class House extends Facility {
         return roomStandards;
     }
 
-    public String getFloors() {
+    public int getFloors() {
         return floors;
     }
 

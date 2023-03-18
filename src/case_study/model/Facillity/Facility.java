@@ -2,15 +2,15 @@ package case_study.model.Facillity;
 
 public abstract class Facility {
     private String serviceName;
-    private String usableArea;
-    private String rentalCost;
-    private String maxNumberPerson;
+    private double usableArea;
+    private long rentalCost;
+    private int maxNumberPerson;
     private String rentalType;
 
     public Facility() {
     }
 
-    public Facility(String serviceName, String usableArea, String rentalCost, String maxNumberPerson, String rentalType) {
+    public Facility(String serviceName, double usableArea, long rentalCost, int maxNumberPerson, String rentalType) {
         this.serviceName = serviceName;
         this.usableArea = usableArea;
         this.rentalCost = rentalCost;
@@ -22,11 +22,15 @@ public abstract class Facility {
         return serviceName;
     }
 
-    public String getUsableArea() {
+    public double getUsableArea() {
         return usableArea;
     }
 
-    public String getMaxNumberPerson() {
+    public long getRentalCost() {
+        return rentalCost;
+    }
+
+    public int getMaxNumberPerson() {
         return maxNumberPerson;
     }
 
@@ -38,15 +42,15 @@ public abstract class Facility {
     public String toString() {
         return
                 "serviceName='" + serviceName + '\'' +
-                ", usableArea='" + usableArea + '\'' +
-                ", rentalCost='" + rentalCost + '\'' +
-                ", maxNumberPerson='" + maxNumberPerson + '\'' +
-                ", rentalType='" + rentalType ;
+                        ", usableArea='" + usableArea + '\'' +
+                        ", rentalCost='" + rentalCost + '\'' +
+                        ", maxNumberPerson='" + maxNumberPerson + '\'' +
+                        ", rentalType='" + rentalType;
 
     }
 
     public String writeToCsv() {
-        return serviceName + "," + usableArea + "," + rentalCost +"," + maxNumberPerson + "," + rentalType;
+        return serviceName + "," + usableArea + "," + rentalCost + "," + maxNumberPerson + "," + rentalType + ",";
     }
 
 }
